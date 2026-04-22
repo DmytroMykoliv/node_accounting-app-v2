@@ -6,14 +6,14 @@ const router = express.Router();
 
 router.get('/', usersController.getAll);
 
-router.post('/', express.json(), usersController.create);
+router.post('/', usersController.create);
 
 router.delete('/:id', usersController.deleteOne);
 
 router.get('/:id', usersController.getOne);
 
-router.put('/:id', express.json(), usersController.update);
+router.put('/:id', usersController.update);
 
-router.patch('/:id', express.json(), usersController.update);
+router.patch('/:id', usersController.update);
 
 module.exports = router;

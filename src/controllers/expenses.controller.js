@@ -42,7 +42,7 @@ const updatePut = async (req, res) => {
   const { userId, spentAt, title, amount, category, note } = req.body || {};
 
   if (!userId || !spentAt || !title || !amount || !category || !note) {
-    res.sendStatus(422);
+    res.sendStatus(400);
 
     return;
   }
@@ -86,7 +86,7 @@ const deleteOne = async (req, res) => {
 
   await expensesService.deleteById(req.params.id);
 
-  res.status(204).json(expense);
+  res.sendStatus(204);
 };
 
 module.exports = {

@@ -5,14 +5,14 @@ const router = express.Router();
 
 router.get('/', expensesController.getAll);
 
-router.post('/', express.json(), expensesController.create);
+router.post('/', expensesController.create);
 
 router.delete('/:id', expensesController.deleteOne);
 
 router.get('/:id', expensesController.getOne);
 
-router.put('/:id', express.json(), expensesController.updatePut);
+router.put('/:id', expensesController.updatePut);
 
-router.patch('/:id', express.json(), expensesController.updatePatch);
+router.patch('/:id', expensesController.updatePatch);
 
 module.exports = router;
