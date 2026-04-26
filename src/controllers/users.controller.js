@@ -34,7 +34,7 @@ const deleteOne = async (req, res) => {
 
   await usersService.deleteById(req.params.id);
 
-  res.status(204).json(user);
+  res.sendStatus(204);
 };
 
 const update = async (req, res) => {

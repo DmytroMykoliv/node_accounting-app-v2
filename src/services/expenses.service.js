@@ -4,14 +4,16 @@ const { v4: uuidv4 } = require('uuid');
 const expenses = [];
 
 const getAll = ({ userId, from, to, categories }) => {
-  let filteredExpanses = expenses;
+  let filteredExpanses = [...expenses];
 
   if (userId) {
-    filteredExpanses = expenses.filter((ex) => ex.userId === userId);
+    filteredExpanses = filteredExpanses.filter((ex) => ex.userId === userId);
   }
 
   if (categories) {
-    filteredExpanses = expenses.filter((ex) => ex.category === categories);
+    filteredExpanses = filteredExpanses.filter(
+      (ex) => ex.category === categories,
+    );
   }
 
   if (from && to) {
